@@ -31,7 +31,6 @@ class AProxy implements A {
                 if (args != null) {
                     Arrays.stream(args).forEach(System.out::println);
                 }
-                System.out.println(proxy);
                 Object invoke = method.invoke(a, args);
                 System.out.println("end---");
                 return invoke;
