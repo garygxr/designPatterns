@@ -18,8 +18,8 @@ public class StaticProxy {
     class BProxy implements A {
         B b;
 
-        public BProxy(B b) {
-            this.b = b;
+        public BProxy() {
+            this.b = new B();
         }
 
         @Override
@@ -28,5 +28,10 @@ public class StaticProxy {
             b.method();
             System.out.println("end----");
         }
+    }
+
+    public static void main(String[] args) {
+        BProxy bProxy = new StaticProxy().new BProxy();
+        bProxy.method();
     }
 }
